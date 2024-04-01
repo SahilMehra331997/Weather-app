@@ -9,10 +9,13 @@
  </div>
 <div class="weather-app">
  <div class="upper-data">
-   <img src="../assets/sunny.webp">
+   <img *ngIf="time" src="../assets/night.png">
      <div class="weatherdata">
        <div class="location" *ngIf="weatherData" >{{ weatherData.name }}</div>
        <div class="temperature" *ngIf="weatherData" >Temperature: {{ weatherData.main.temp }}°C</div>
+       <div *ngIf="error" class="error-msg">
+        <p class="text-danger bg-dark">{{ error }}</p>
+      </div>
     </div>
  </div>
 
@@ -34,7 +37,7 @@
            <span>Desc</span>
        </div>
        <div *ngIf="weatherData" class="info-block-value">
-         {{ weatherData.weather[0].description }}
+         {{ weatherData.weather[0].description}}
        </div>
      </div>
 
@@ -60,9 +63,7 @@
    </div>
  </div>
 
- <div *ngIf="error" class="error-msg">
-   <p>{{ error }}</p>
- </div>
+ 
 </div>
 
 

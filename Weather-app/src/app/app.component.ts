@@ -23,12 +23,17 @@ export class AppComponent {
   city: string = '';
   weatherData: WeatherData | null = null;
   error: string | null = null;
-
-  constructor(private http: HttpClient) {}
+  date=new Date;
+  time: any;
+  constructor(private http: HttpClient) {
+     this.time = this.date.getTime();
+     console.log(this.time);
+  }
 
   getWeather() {
     const apiKey = '14f0aa872f37c96c45c486595a9ed74d'; // Replace with your OpenWeatherMap API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&appid=${apiKey}&units=metric`;
+    
 
     this.http.get<WeatherData>(apiUrl)
       .subscribe(

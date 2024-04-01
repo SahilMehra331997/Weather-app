@@ -49,11 +49,11 @@ button{
     justify-content: center;
 }
 .location{
-    color:white;
+    color:rgb(0, 0, 0);
     text-align: center;
 }
  .temperature{
-    color:white;
+    color:rgb(0, 0, 0);
     font-size:larger;
     font-weight: 500;
  }
